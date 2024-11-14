@@ -33,10 +33,5 @@ namespace Staff
         {
             Console.WriteLine($"Id{this.Id},Name{this.Name}, JobTitle{this.JobTitle}");
         }
-
-        internal override void GetInfo()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
