@@ -15,18 +15,22 @@ namespace Staff
 
         }
 
-        private protected sealed override void GenerateId()
+        private protected sealed override int GenerateId()
         {
+            int newId;
+
             if (_existingIds.Count == 0) 
             {
                 _existingIds = new List<int>();
-                _existingIds.Add(0);
+                newId = 0;
             }
             else
             {
-                var newId = _existingIds.Max() + 1;
+                newId = _existingIds.Max() + 1;
                 _existingIds.Add(newId);
             }
+
+            return newId;
 
         }
 

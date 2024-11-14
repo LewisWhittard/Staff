@@ -25,7 +25,7 @@ namespace Staff
             private protected set { this._name = value; }
         }
 
-        private protected abstract void GenerateId();
+        private protected abstract int GenerateId();
 
         internal protected abstract void GetInfo();
     }
