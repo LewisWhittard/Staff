@@ -9,10 +9,10 @@ namespace Staff
 
         public Employee(string name, string jobTitle)
         {
-            GenerateId();
+            
             Name = name;
             JobTitle = jobTitle;
-
+             Id = GenerateId();
         }
 
         private protected sealed override int GenerateId()
@@ -34,7 +34,7 @@ namespace Staff
 
         }
 
-        internal protected virtual void GetInfo()
+        internal protected override void GetInfo()
         {
             Console.WriteLine($"Id{this.Id},Name{this.Name}, JobTitle{this.JobTitle}");
         }

@@ -4,14 +4,20 @@ namespace Staff
 {
     internal abstract class EmployeeBase
     {
-        private protected readonly int _iD;
+        private protected int _iD;
         private protected string _jobTitle;
         private protected string _name;
         private protected static List<int> _existingIds;
 
+        protected EmployeeBase(int Id)
+        {
+            this._iD = GenerateId();
+        }
+
         internal protected int Id
         {
             get { return this._iD; }
+            private protected set { this._iD = value; }
         }
 
         internal protected string JobTitle 
