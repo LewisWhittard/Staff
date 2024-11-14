@@ -2,31 +2,37 @@
 
 namespace Staff
 {
-    internal abstract class EmployeeBase
+    public class EmployeeBase
     {
         private protected readonly int _iD;
         private protected string _jobTitle;
         private protected string _name;
         private protected static List<int> _existingIds;
 
-        internal int Id
+        internal protected int Id
         {
             get { return this._iD; }
         }
 
-        internal string JobTitle 
+        internal protected string JobTitle 
         { get { return this._jobTitle; } 
           private set { this._jobTitle = value; }
         }
 
-        internal string Name
+        internal protected string Name
         {
             get { return this._name; }
             private set { this._name = value; }
         }
 
-        public abstract void GenerateId();
+        private protected virtual void GenerateId()
+        {
+            throw new System.Exception("Developer should not be using base)");
+        }
 
-        public abstract string GetInfo();
+        private protected virtual void GetInfo()
+        {
+            throw new System.Exception("Developer should not be using base)");
+        }
     }
 }
