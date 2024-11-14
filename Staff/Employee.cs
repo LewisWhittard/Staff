@@ -1,22 +1,42 @@
-﻿namespace Staff
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Staff
 {
-    public class Employee : EmployeeBase
+    internal class Employee : EmployeeBase
     {
 
         public Employee(string name, string jobTitle)
         {
-            
+            GenerateId();
+            Name = name;
+            JobTitle = jobTitle;
 
         }
 
         private protected sealed override void GenerateId()
         {
-            throw new System.NotImplementedException();
+            if (_existingIds.Count == 0) 
+            {
+                _existingIds = new List<int>();
+                _existingIds.Add(0);
+            }
+            else
+            {
+                _existingIds.Add((_existingIds.Max() + 1));
+            }
+
         }
 
-        public override string GetInfo()
+        internal protected virtual void GetInfo()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine($"Id{this.Id},Name{this.Name}, JobTitle{this.JobTitle}");
+        }
+
+        internal override void GetInfo()
+        {
+            throw new NotImplementedException();
         }
     }
 }
