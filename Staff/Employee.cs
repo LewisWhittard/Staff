@@ -24,7 +24,8 @@ namespace Staff
             }
             else
             {
-                _existingIds.Add((_existingIds.Max() + 1));
+                var newId = _existingIds.Max() + 1;
+                _existingIds.Add(newId);
             }
 
         }
