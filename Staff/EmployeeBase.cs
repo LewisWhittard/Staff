@@ -9,11 +9,6 @@ namespace Staff
         private protected string _name;
         private protected static List<int> _existingIds;
 
-        protected EmployeeBase(int Id)
-        {
-            this._iD = GenerateId();
-        }
-
         internal protected int Id
         {
             get { return this._iD; }
